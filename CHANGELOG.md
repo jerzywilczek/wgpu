@@ -217,6 +217,7 @@ By @inner-daemons in [#9434](https://github.com/gfx-rs/wgpu/pull/9434).
 - Added full support for mesh shaders, including in WGSL shaders. By @inner-daemons in [#8739](https://github.com/gfx-rs/wgpu/pull/8739).
 - Added support for bindless storage buffers (buffer binding arrays) on Metal. By @mate-h in [#9081](https://github.com/gfx-rs/wgpu/pull/9081).
 - Added `DropCallback`s to Metal textures. By @jerzywilczek in [#9634](https://github.com/gfx-rs/wgpu/pull/9634).
+- Added support for NV12 and P010 texture formats. Due to no native support, they're implemented using separate textures for each plane. By @jerzywilczek in [#9624](https://github.com/gfx-rs/wgpu/pull/9624)
 
 #### GLES
 
