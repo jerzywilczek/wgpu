@@ -621,6 +621,11 @@ impl crate::Device for super::Device {
         };
 
         let (width, height) = (desc.size.width as usize, desc.size.height as usize);
+
+        if let Some(planes) = desc.format.planes() {
+            assert_eq!(planes, 2);
+        }
+
         let (raw, plane1) = if let Some(2) = desc.format.planes() {
             let format0 = desc
                 .format
@@ -692,7 +697,7 @@ impl crate::Device for super::Device {
             .map_view_format(desc.format, aspects);
 
         let raw_source = if texture.format.is_multi_planar_format() {
-            texture.plane_texture(aspects)
+            texture.raw_plane(aspects)
         } else {
             &texture.raw
         };
